@@ -1,0 +1,44 @@
+---
+import FirstSection from '../components/customs/firstSection.astro'
+import SecondSection from '../components/customs/secondSection.astro'
+import EjemploAstro from '../components/ejemplos.jsx'
+import Nav from '../components/layout/nav.astro'
+// import EjemploAstro from '../components/ejemplos.astro'
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>GBTC - Cryptos</title>
+		<meta name="description" content="Este es un ejemplo de como hacer animaciones con astro al scrollear" />
+	</head>
+	<body>
+		<Nav />
+		<FirstSection />
+		<SecondSection />
+		<!-- <div class="bg-white flex flex-col items-center justify-center h-[300px] border border-black p-4 rounded m-7">
+			<h1 class="text-4xl font-bold">Ejemplo astro con animación</h1>
+
+		</div>
+		{
+			Array(5).fill(1).map((e,i) => <EjemploAstro client:load index={i + 1}  />)
+		} -->
+	</body>
+</html>
+
+
+<style is:global>
+	:root {
+		--primary-color: #f58851;
+		--hover-primary-color: #cb4603;
+	}
+	*{
+		transition: all 0.2s ease-in-out;
+	}
+	body {
+		background-color: #f4f4f4;
+	}
+</style>

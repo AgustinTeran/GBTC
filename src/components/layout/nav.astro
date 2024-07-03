@@ -1,0 +1,30 @@
+---
+import InstagramIcon from '../../assets/icons/MdiInstagram.astro';
+import TwitterIcon from '../../assets/icons/MdiTwitter.astro';
+import HamburgerIcon from '../../assets/icons/IconamoonMenuBurgerHorizontalBold';
+---
+
+
+<nav class="sticky top-0 z-50 flex justify-between items-center w-full h-16 py-2 px-5 lg:px-14 bg-white">
+  <div class="h-full flex items-center">
+    <img class="h-full" src="https://gbtcborn.com/assets/images/logo.webp" alt="Logo de GBTC" />
+  </div>
+  <div class="hidden lg:flex items-center gap-6">
+    <a href="#" class="text-3xl flex items-center justify-center hover:opacity-50">
+      <TwitterIcon />
+    </a>
+    <a href="#" class="text-3xl flex items-center justify-center hover:opacity-50">
+      <InstagramIcon />
+    </a>
+    <div>
+      <select class="px-5 py-2 rounded-md text-base bg-[var(--primary-color)] text-white font-semibold hover:bg-[var(--hover-primary-color)] cursor-pointer">
+        <option class="bg-white py-4 text-black">EN</option>
+        <option class="bg-white py-4 text-black">ES</option>
+      </select>
+    </div>
+    <button class="px-6 py-2 rounded-md text-base bg-[var(--primary-color)] text-white font-semibold hover:bg-[var(--hover-primary-color)]">Visítanos!</button>
+  </div>
+  <div class="lg:hidden">
+    <HamburgerIcon client:load/>
+  </div>
+</nav>
