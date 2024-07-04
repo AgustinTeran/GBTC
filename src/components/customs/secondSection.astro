@@ -1,3 +1,33 @@
-<div class="flex justify-center items-center py-8" style={{backgroundPosition:"50% 50%",backgroundImage: `url(https://gbtcborn.com/assets/images/p02-1.webp)`}}>
+---
+import Shield from "../../assets/icons/IconParkTwotoneProtect.astro"
+import People from "../../assets/icons/OcticonPeople16.astro"
+import PaperPlane from "../../assets/icons/Fa6RegularPaperPlane.astro"
+import Chain from "../../assets/icons/AkarIconsLinkChain.astro"
+import Growing from "../../assets/icons/Growing.astro"
+import HappyFace from "../../assets/icons/MdiEmoticonHappyOutline.astro"
+
+var array = [
+  {name: "Shield", icon: Shield, title: "Seguridad y Confianza", text: "Para nosotros, resulta fundamental que al aprender con nosotros te sientas como en casa."},
+  {name: "People", icon: People, title: "Soluciones Personalizadas", text: "Nos adecuamos en base a las necesidades de cada cliente."},
+  {name: "PaperPlane", icon: PaperPlane, title: "Envíos Globales", text: "Brindamos asesoramiento a todas partes del mundo de la forma más inmediata e innovadora."},
+  {name: "Chain", icon: Chain, title: "Conectividad", text: "Actuamos como enlace entre nuestros clientes del mundo crypto. Charlas, Trading e incluso Proyectos NFT."},
+  {name: "Growing", icon: Growing, title: "Profesionalismo", text: "En el mundo de las monedas digitales, somos el punto de encuentro entre tus criptos y tus finanzas."},
+  {name: "HappyFace", icon: HappyFace, title: "Accesibilidad", text: "Facilitamos este proceso logrando que sea lo más práctico posible para cualquier usuario, con cualquier tipo de token y/o criptomonedas."},
+]
+---
+<div data-aos="fade-up" class="flex mt-6 justify-center items-center py-8" style={{backgroundPosition:"50% 50%",backgroundImage: `url(https://gbtcborn.com/assets/images/p02-1.webp)`}}>
   <img src="https://gbtcborn.com/assets/images/logo.webp" alt="Logo de GBTC" />
+</div>
+<div class="flex justify-center flex-wrap gap-5">
+  {
+    array.map((e,i) => 
+    <div data-aos="zoom-in" class="min-w-fit w-[32%] flex justify-center">
+      <div class="w-64 gap-6 flex flex-col items-center justify-start">
+        <e.icon class="h-auto w-1/2 p-4 text-[var(--primary-color)]" />
+        <h4 class="text-xl font-bold">{e.title}</h4>
+        <p class="text-lg text-center">{e.text}</p>
+      </div>
+    </div>
+    )
+  }
 </div>
