@@ -2,6 +2,20 @@
 import InstagramIcon from '../../assets/icons/MdiInstagram.astro';
 import TwitterIcon from '../../assets/icons/MdiTwitter.astro';
 import HamburgerIcon from '../../assets/icons/IconamoonMenuBurgerHorizontalBold';
+import ChangeLanguage from '../customs/changeLanguage.jsx';
+
+const currentPath = Astro.url.pathname
+var texts = {
+  en: {
+    button: "Contact Us",
+  },
+  es: {
+    button: "Visítanos!",
+  },
+  fr: {
+    button: "VISITEZ NOUS",
+  },
+}
 ---
 
 
@@ -10,21 +24,33 @@ import HamburgerIcon from '../../assets/icons/IconamoonMenuBurgerHorizontalBold'
     <img class="h-full" src="https://gbtcborn.com/assets/images/logo.webp" alt="Logo de GBTC" />
   </div>
   <div class="hidden lg:flex items-center gap-6">
-    <a href="https://twitter.com/GbtcBorn" class="text-3xl flex items-center justify-center hover:opacity-50">
+    <a target="_blank" href="https://twitter.com/GbtcBorn" class="text-3xl flex items-center justify-center hover:opacity-50">
       <TwitterIcon />
     </a>
-    <a href="https://www.instagram.com/gbtc_born/" class="text-3xl flex items-center justify-center hover:opacity-50">
+    <a target="_blank" href="https://www.instagram.com/gbtc_born/" class="text-3xl flex items-center justify-center hover:opacity-50">
       <InstagramIcon />
     </a>
-    <div>
-      <select class="px-5 py-2 rounded-md text-base bg-[var(--primary-color)] text-white font-semibold hover:bg-[var(--hover-primary-color)] cursor-pointer">
-        <option class="bg-white py-4 text-black">EN</option>
-        <option class="bg-white py-4 text-black">ES</option>
-      </select>
+    <div class="relative">
+      <ChangeLanguage actualLanguage={currentPath.split('/')[1]} client:load/>
     </div>
-    <button class="px-6 py-2 rounded-md text-base bg-[var(--primary-color)] text-white font-semibold hover:bg-[var(--hover-primary-color)]">Visítanos!</button>
+    <button class="px-6 py-2 rounded-md text-base bg-[var(--primary-color)] text-white font-semibold hover:bg-[var(--hover-primary-color)]">
+      {texts[currentPath.split('/')[1]].button}
+    </button>
   </div>
   <div class="lg:hidden">
-    <HamburgerIcon client:load/>
+    <HamburgerIcon client:load>
+      <a target="_blank" href="https://twitter.com/GbtcBorn" class="text-3xl flex items-center justify-center hover:opacity-50">
+        <TwitterIcon />
+      </a>
+      <a target="_blank" href="https://www.instagram.com/gbtc_born/" class="text-3xl flex items-center justify-center hover:opacity-50">
+        <InstagramIcon />
+      </a>
+      <div class="relative">
+        <ChangeLanguage actualLanguage={currentPath.split('/')[1]} client:load/>
+      </div>
+      <button class="px-6 py-2 rounded-md text-base bg-[var(--primary-color)] text-white font-semibold hover:bg-[var(--hover-primary-color)]">
+        {texts[currentPath.split('/')[1]].button}
+      </button>
+    </HamburgerIcon>
   </div>
 </nav>

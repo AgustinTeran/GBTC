@@ -1,0 +1,42 @@
+---
+import FirstSection from '../../components/customs/firstSection.astro'
+import SecondSection from '../../components/customs/secondSection.astro'
+// import EjemploAstro from '../components/ejemplos.jsx'
+import Nav from '../../components/layout/nav.astro'
+import Main from '../../components/layout/main.astro'
+// import EjemploAstro from '../components/ejemplos.astro'
+import Logo from "../../assets/images/logo.webp"; 
+---
+
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href={Logo.src} />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>GBTC - Cryptos</title>
+		<meta name="description" content="Tu lugar de aprender y gestionar tus criptomonedas" />
+	</head>
+	<body>
+		<Nav />
+		<Main>
+			<FirstSection />
+			<SecondSection />
+		</Main>
+	</body>
+	<script src="../../js/index.js"></script>
+</html>
+
+
+<style is:global>
+	:root {
+		--primary-color: #f58851;
+		--hover-primary-color: #cb4603;
+	}
+	*{
+		transition: all 0.2s ease-in-out;
+	}
+	body {
+		background-color: #f4f4f4;
+	}
+</style>

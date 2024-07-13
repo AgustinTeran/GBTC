@@ -6,26 +6,108 @@ import Chain from "../../assets/icons/AkarIconsLinkChain.astro"
 import Growing from "../../assets/icons/Growing.astro"
 import HappyFace from "../../assets/icons/MdiEmoticonHappyOutline.astro"
 
+var language = Astro.url.pathname.split('/')[1];
+
+
+
 var array = [
-  {name: "Shield", icon: Shield, title: "Seguridad y Confianza", text: "Para nosotros, resulta fundamental que al aprender con nosotros te sientas como en casa."},
-  {name: "People", icon: People, title: "Soluciones Personalizadas", text: "Nos adecuamos en base a las necesidades de cada cliente."},
-  {name: "PaperPlane", icon: PaperPlane, title: "Envíos Globales", text: "Brindamos asesoramiento a todas partes del mundo de la forma más inmediata e innovadora."},
-  {name: "Chain", icon: Chain, title: "Conectividad", text: "Actuamos como enlace entre nuestros clientes del mundo crypto. Charlas, Trading e incluso Proyectos NFT."},
-  {name: "Growing", icon: Growing, title: "Profesionalismo", text: "En el mundo de las monedas digitales, somos el punto de encuentro entre tus criptos y tus finanzas."},
-  {name: "HappyFace", icon: HappyFace, title: "Accesibilidad", text: "Facilitamos este proceso logrando que sea lo más práctico posible para cualquier usuario, con cualquier tipo de token y/o criptomonedas."},
+  {
+    name: "Shield",
+    icon: Shield,
+    title: {
+      es: "Seguridad y Confianza",
+      fr: "Sécurité et Confiance",
+      en: "Safety and reliable"
+      },
+    text: {
+      es: "Para nosotros, resulta fundamental que al aprender con nosotros te sientas como en casa.",
+      fr: "Il est important pour nous que vous vous sentiez chez vous au moment où vous apprenez avec nous.",
+      en: "We consider it essential for you to feel at home while you learning with us."
+    },
+  },
+  {
+    name: "People",
+    icon: People,
+    title: {
+      es: "Soluciones Personalizadas",
+      fr: "Solutions Personnalisées",
+      en: "Customized Solutions"
+    },
+    text: {
+      es: "Nos adecuamos en base a las necesidades de cada cliente.",
+      fr: "Nous nous adaptons aux besoins de chaque client.",
+      en: "Specialists at adapting to the individual needs of each client."
+    },
+  },
+  {
+    name: "PaperPlane",
+    icon: PaperPlane,
+    title: {
+      es: "Envíos Globales",
+      fr: "Sepa Transfer/Bank transfer to USDT/BTC/ETH",
+      en: "Global Shipping"
+    },
+    text: {
+      es: "Brindamos asesoramiento a todas partes del mundo de la forma más inmediata e innovadora.",
+      fr: "Nous offrons des conseils dans le monde entier de la manière la plus immédiate et la plus innovante qui soit.",
+      en: "We provide advice to all parts of the world in the most immediate and innovative way."
+    },
+  },  
+  {
+    name: "Chain",
+    icon: Chain,
+    title: {
+      es: "Conectividad",
+      fr: "Connectivite",
+      en: "Network Connectivity"
+    },
+    text: {
+      es: "Actuamos como enlace entre nuestros clientes del mundo crypto. Charlas, Trading eincluso Proyectos NFT.",
+      fr: "Nous assurons la liaison entre nos clients et le monde de la crypto-monnaie. Conférences, Trading et projets NFT.",
+      en: "We are the link between our clients in the crypto world. Chats, Trading and even NFT Projects."
+    },
+  },
+  {
+    name: "Growing",
+    icon: Growing,
+    title: {
+      es: "Profesionalismo",
+      fr: "Professionnalisme",
+      en: "Professionalism"
+    },
+    text: {
+      es: "En el mundo de las monedas digitales, somos el punto de encuentro entre tus criptos y tus finanzas.",
+      fr: "Dans le monde des cybermonnaies, nous sommes le point de rencontre entre vos cryptomonnaies et vos finances.",
+      en: "We are the meeting point between your crypto and your finances in the world of digital currencies."
+    },
+  },
+  {
+    name: "HappyFace",
+    icon: HappyFace,
+    title: {
+      es: "Accesibilidad",
+      fr: "Accessibilité",
+      en: "Accessibility"
+    },
+    text: {
+      es: "Facilitamos este proceso logrando que sea lo más práctico posible para cualquier usuario, con cualquier tipo de token y/o criptomonedas.",
+      fr: "Nous facilitons ce processus en le rendant aussi pratique que possible pour tout utilisateur, avec n'importe quel type de token et/ou de crypto-monnaie.",
+      en: "We make this process as easy as possible for any user. You will be able to operate with any type of token, using only your mobile phone."
+    },
+  }
 ]
 ---
 <div data-aos="fade-up" class="flex mt-6 justify-center items-center py-8" style={{backgroundPosition:"50% 50%",backgroundImage: `url(https://gbtcborn.com/assets/images/p02-1.webp)`}}>
   <img src="https://gbtcborn.com/assets/images/logo.webp" alt="Logo de GBTC" />
 </div>
-<div class="flex justify-center flex-wrap gap-5">
+<div class="flex justify-center flex-wrap gap-5 pb-10">
   {
     array.map((e,i) => 
     <div data-aos="zoom-in" class="min-w-fit w-[32%] flex justify-center">
       <div class="w-64 gap-6 flex flex-col items-center justify-start">
         <e.icon class="h-auto w-1/2 p-4 text-[var(--primary-color)]" />
-        <h4 class="text-xl font-bold">{e.title}</h4>
-        <p class="text-lg text-center">{e.text}</p>
+        <h4 class="text-xl font-bold text-center">{e.title[language]}</h4>
+        <p class="text-lg text-center">{e.text[language]}</p>
       </div>
     </div>
     )
